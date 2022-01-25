@@ -1,5 +1,4 @@
 
-//const timeLeft = document.getElementById('time-left')
 const daysLeft = document.getElementById('days-left')
 const hoursLeft = document.getElementById('hours-left')
 const minutesLeft = document.getElementById('minutes-left')
@@ -20,17 +19,7 @@ function countDown(){
   const hours = Math.floor((timespan % day) / hour)
   const minutes = Math.floor((timespan % hour) / minute)
   const seconds = Math.floor((timespan % minute) / second)
-  
-  /*
-  if (timespan <= 0 && timespan >= -day) {
-    timeLeft.innerHTML = "HAPPY BIRTHDAY!!!"
-    clearInterval(timerId)
-    return;
-  }
-  */
 
-  //timeLeft.innerHTML = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds until your birthday.`
-  
   daysLeft.innerHTML = `${days} days`
   hoursLeft.innerHTML = `${hours} hours`
   minutesLeft.innerHTML = `${minutes} minutes`
