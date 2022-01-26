@@ -1,17 +1,24 @@
-
+//getting html tags by id
 const daysLeft = document.getElementById('days-left')
 const hoursLeft = document.getElementById('hours-left')
 const minutesLeft = document.getElementById('minutes-left')
 const secondsLeft = document.getElementById('seconds-left')
 const birthdayOrNot = document.getElementById('birthday-or-not')
 
+//pulling in the date and event values from the form 
+const date = document.getElementById("id-name").value;
+const event = document.getElementById("id-name").value;
+
 const birthday = new Date('01/28/2022')
+
+//initializing the values of days, hours, minutes, seconds in milliseconds
 const second = 1000
 const minute = second * 60
 const hour = minute * 60
 const day = hour * 24
 let timerId;
 
+//calculating time left to the event
 function countDown(){
   const today = new Date()
   const timespan =  birthday - today
