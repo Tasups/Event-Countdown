@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Name Form</title>
+    <title>Event Countdown Form</title>
     <link rel="stylesheet" href="style.css">
   </head>
   
@@ -20,7 +20,7 @@
       <br>
       <input type="date" id="date" name="date">
       <br><br>
-      <button onClick="countdown(); startTimer();">Submit</button>
+      <button onClick="countdown()">Submit</button>
     </form>
     
 	<script>
@@ -38,7 +38,7 @@
       
       //calculating time left to the event
       const today = new Date();
-      const timespan =  birthday - today;
+      const timespan = birthday - today;
       const days = Math.floor(timespan / day);
       const hours = Math.floor((timespan % day) / hour);
       const minutes = Math.floor((timespan % hour) / minute);
@@ -52,11 +52,11 @@
     	        <h1>HAPPY ${newName.toUpperCase()}!!!</h1>
 	          </div>
           `
-          )
+          );
         return;
       }
       
-      //write to the document and run continual countdown each second
+      //write to the document
       document.write(
 	      `
 	      <div>
@@ -70,11 +70,11 @@
 	        </ul>
 	      </div>
 	      `
-	      )
+	      );
 	      
-	      setInterval(countdown, 1000);
+	    //run countdown function every second   
+	    setTimeout(countdown, 1000);
 }
-
 	    
 	</script>
 	
