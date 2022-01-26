@@ -6,10 +6,10 @@ const secondsLeft = document.getElementById('seconds-left')
 const birthdayOrNot = document.getElementById('birthday-or-not')
 
 //pulling in the date and event values from the form 
-const date = document.getElementById("id-name").value;
-const event = document.getElementById("id-name").value;
+const event = document.getElementById("event-name").value;
+const date = document.getElementById("event-date").value;
 
-const birthday = new Date('01/28/2022')
+const birthday = new Date(date)
 
 //initializing the values of days, hours, minutes, seconds in milliseconds
 const second = 1000
@@ -26,15 +26,20 @@ function countDown(){
   const hours = Math.floor((timespan % day) / hour)
   const minutes = Math.floor((timespan % hour) / minute)
   const seconds = Math.floor((timespan % minute) / second)
-
+  
+  //if it is the day of the event
+  if (timespan < 0 && timespan > -day) {
+    birthdayOrNot.innerHTML = `HAPPY ${event.toUpperCase()} !!!`
+    return
+  }
+  //continual countdown each second
   daysLeft.innerHTML = `${days} days`
   hoursLeft.innerHTML = `${hours} hours`
   minutesLeft.innerHTML = `${minutes} minutes`
   secondsLeft.innerHTML = `${seconds} seconds`
-  birthdayOrNot.innerHTML = `${timespan <= 0 && timespan >= -day ? null : "until your birthday."}`
+  birthdayOrNot.innerHTML = `until your ${event}.`;
 }
 
 timerId = setInterval(countDown, 1000)
 
 countDown()
-
