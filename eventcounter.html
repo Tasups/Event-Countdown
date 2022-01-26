@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Countdown</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <body>
+    
+    <form>
+      <label for="event-name">Event name:</label><br>
+      <input type="text" id="event-name" name="event-name" >
+      <br>
+      <label for="event-date">Last name:</label><br>
+      <input type="date" id="event-date" name="event-date" >
+      <br><br>
+      <button onClick="countDown(event) startTimer(event)">Submit</button>
+    </form>
+    
+	<script>
+	  function countDown (event) {
+	    event.preventDefault();
+
+	    const eventName = document.getElementById("event-name").value;
+	    const eventDate = document.getElementById("event-date").value;
+	    
+      const birthday = new Date(eventDate);
+      console.log(eventName);
+      console.log(eventDate);
+      console.log(birthday);
+      
+      //initializing the values of days, hours, minutes, seconds in milliseconds
+      const second = 1000;
+      const minute = second * 60;
+      const hour = minute * 60;
+      const day = hour * 24;
+      
+      //calculating time left to the event
+      const today = new Date();
+      const timespan =  birthday - today;
+      const days = Math.floor(timespan / day);
+      const hours = Math.floor((timespan % day) / hour);
+      const minutes = Math.floor((timespan % hour) / minute);
+      const seconds = Math.floor((timespan % minute) / second);
+      
+      //if it is the day of the event
+      if (timespan <= 0 && timespan > -day) {
+        document.open();
+        document.write(`HAPPY ${event.toUpperCase()}!!!`);
+        document.close();
+        return;
+      }
+      
+      document.open();
+      document.write(`
+        <div class="container">
+          <ul>
+            <li>It is</li>
+            <li>${days}</li>
+            <li>${hours}</li>
+            <li>${minutes}</li>
+            <li>${seconds}</li>
+            <li>until your ${eventName}.</li>
+          </ul>
+        </div>  
+      `);
+      document.close();
+      
+	  }
+	  
+	  let timerId;
+	  
+	  function startTimer (event) {
+	    event.preventDefault();
+	    timerId = setInterval(countDown, 1000);
+	  }
+	  
+	</script>
+  </body>
+  
+</html>
