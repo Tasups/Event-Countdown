@@ -9,22 +9,22 @@
   </head>
   
   <body>
-    <div id="counter">
+    <h1 class="title">EVENT COUNTDOWN</h1>
+    <div id="counter" class="until">
       <form>
-        <br>
-        <label for="name"></label>
-        <br>
-        <input type="text" id="name" name="name">
-        <br><br>
-        <label for="date"></label>
-        <br>
-        <input type="date" id="date" name="date">
-        <br><br>
-        <button id="submit">Submit</button>
-        <br><br>
-        <button id="start">Start</button>
-        <br><br>
-        <button id="reset">Reset</button>
+          <div class="form-inputs">
+            <label class="event-name-label" for="name">Enter a name:</label>
+            <input class="event-name-input" type="text" id="name" name="name">
+          </div>
+          <div class="form-inputs">
+            <label class="event-date-label" for="date">Select a date:</label>
+            <input class="event-date-input" type="date" id="date" name="date">
+          </div>
+        <div class="form-controls">
+          <button id="submit">Submit</button>
+          <button id="start">Start</button>
+          <button id="reset">Reset</button>
+        </div>
       </form>
     </div>
     

@@ -77,7 +77,7 @@
       // start the countdown and  put that to the eventContainer div
       document.getElementById('counter').innerHTML =
 	      `
-	        <div class="until">
+	          <div class="countdown">
 	          <div class="until-component">
 	            <div class="until-number">${days}</div>
 	            <div class="until-unit">Days</div>
@@ -94,12 +94,14 @@
 	            <div class="until-number">${seconds}</div>
 	            <div class="until-unit">Seconds</div>
 	          </div>
-	        </div>
-	        
-	        <form>
-	        <br><br>
-          <button id="reset">Reset</button>
-	        </form>
+  	        </div>
+  	        <div class="until-event">Until ${eventName}</div>
+  	        <div>
+  	          <form>
+  	          <br><br>
+              <button id="reset">Reset</button>
+  	        </form>
+  	        </div>
 	      `;
 	      
 	    // run countdown function every second   

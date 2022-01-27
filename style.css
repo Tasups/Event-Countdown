@@ -7,20 +7,113 @@ body {
   background-color: hsla(200, 92%, 54%, 1);
 }
 
-.container {
-  background-color: white;
-  margin: 10rem auto;
-  width: 50%;
-  padding: 1rem 2rem;
+.title {
+  color: white;
+  margin: 1em;
+  padding: 1em;
+  text-align: center;
+  font-size: 3.5rem;
 }
 
-#time-left {
-  font-family: 'Open Sans', 'Roboto', sans-serif;
+.until {
+  padding: 1em;
+  background: white;
+  max-width: 700px;
+  border-radius: 5px;
+  margin: 2em auto;
 }
 
-li {
-  font-family: 'Open Sans', 'Roboto', sans-serif;
-  list-style-type: none;
-  margin: 1rem 0;
+.countdown {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 1em;
+}
+
+.until-component {
+  flex-grow: 1;
+  background: hsla(200, 92%, 54%, .9);
+  text-align: center;
+  border-radius: 5px;
+}
+
+.until-number {
+  color: white;
+  padding: 1rem;
+  font-size: 5em;
   font-weight: bold;
+}
+
+.until-unit {
+  font-size: 1em;
+  padding-bottom: 1em;
+  font-weight: bold;
+  color: white;
+}
+
+.until-event {
+  display: block;
+  margin: auto;
+  font-size: 3em;
+}
+
+form {
+  margin: auto;
+}
+
+.form-inputs{
+  margin: auto;
+  font-size: 2em;
+  padding: 0.2em;
+}
+
+input {
+  display: block;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  width: 95%;
+  padding: .3em;
+}
+
+.form-controls {
+  margin: 1em auto;
+}
+
+button {
+  display: inline-block;
+  height: 2rem;
+  width: 4rem;
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  transition-duration: 0.25s;
+  color: white;
+}
+
+#submit{
+  background: black;  
+}
+
+#submit:hover {
+  background: lightgrey;
+  color: black;
+}
+
+#start {
+  background: green;
+}
+
+#start:hover {
+  background: lightgreen;
+  color: black;
+}
+
+#reset {
+  background: red;
+}
+
+#reset:hover {
+  background: pink;
+  color: black;
 }
