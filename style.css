@@ -15,6 +15,10 @@ body {
   font-size: 3.5rem;
 }
 
+.reset-component {
+  text-align: center;
+}
+
 .until {
   padding: 1em;
   background: white;
@@ -31,7 +35,7 @@ body {
 }
 
 .until-component {
-  flex-grow: 1;
+  flex: 1rem;
   background: hsla(200, 92%, 54%, .9);
   text-align: center;
   border-radius: 5px;
@@ -53,8 +57,9 @@ body {
 
 .until-event {
   display: block;
-  margin: auto;
-  font-size: 3em;
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 1rem;
 }
 
 form {
@@ -110,10 +115,14 @@ button {
 }
 
 #reset {
+  font-size: 1.3rem;
   background: red;
+  width: 10rem;
+  height: 3rem;
 }
 
 #reset:hover {
   background: pink;
   color: black;
+  border-radius: 5px;
 }

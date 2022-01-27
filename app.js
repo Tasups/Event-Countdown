@@ -23,24 +23,28 @@
     
     // go back to home screen
     function handleReset (e) {
+      e.preventDefault();
       document.getElementById('counter').innerHTML = 
       `
-        <form>
-          <br>
-          <label for="name"></label>
-          <br>
-          <input type="text" id="name" name="name">
-          <br><br>
-          <label for="date"></label>
-          <br>
-          <input type="date" id="date" name="date">
-          <br><br>
-          <button id="submit">Submit</button>
-          <br><br>
-          <button id="start">Start</button>
-          <br><br>
+        <div id="counter" class="until">
+          <form>
+              <div class="form-inputs">
+                <label class="event-name-label" for="name">Enter a name:</label>
+                <input class="event-name-input" type="text" id="name" name="name">
+              </div>
+              <div class="form-inputs">
+                <label class="event-date-label" for="date">Select a date:</label>
+                <input class="event-date-input" type="date" id="date" name="date">
+              </div>
+            <div class="form-controls">
+              <button id="submit">Submit</button>
+              <button id="start">Start</button>
+            </div>
+          </form>
+        </div>
+        <div class="reset-component">
           <button id="reset">Reset</button>
-        </form>
+        </div>
       `;
     }
     
@@ -96,13 +100,7 @@
 	          </div>
   	        </div>
   	        <div class="until-event">Until ${eventName}</div>
-  	        <div>
-  	          <form>
-  	          <br><br>
-              <button id="reset">Reset</button>
-  	        </form>
-  	        </div>
-	      `;
+  	        `
 	      
 	    // run countdown function every second   
 	    setInterval(countdown, 1000);
