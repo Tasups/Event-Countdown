@@ -1,14 +1,17 @@
-         ___        ______     ____ _                 _  ___  
-        / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
-       / _ \ \ /\ / /\___ \  | |   | |/ _ \| | | |/ _` | (_) |
-      / ___ \ V  V /  ___) | | |___| | (_) | |_| | (_| |\__, |
-     /_/   \_\_/\_/  |____/   \____|_|\___/ \__,_|\__,_|  /_/ 
- ----------------------------------------------------------------- 
+#Event Countdown
 
+##Technologies Used
+###--HTML, CSS, JavaScript, Github, Markdown--
 
-Hi there! Welcome to AWS Cloud9!
+###Explanation###
+This is an event counter that takes an event and date and then starts a timer to show the days, hours, minutes, and seconds until that day. When that day is reached, the timer will show a large header congratulating you on the day. 
 
-To get started, create some files, play with the terminal,
-or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
+####Requests
 
-Happy coding!
+**Needs**
+1. Styling
+2. Move code to another file
+
+**Features**
+1. Reset/Undo button
+2. Submission for what to say when the date is attained/reached

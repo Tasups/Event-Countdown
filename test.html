@@ -9,74 +9,26 @@
   </head>
   
   <body>
+    <div id="counter">
+      <form>
+        <br>
+        <label for="name"></label>
+        <br>
+        <input type="text" id="name" name="name">
+        <br><br>
+        <label for="date"></label>
+        <br>
+        <input type="date" id="date" name="date">
+        <br><br>
+        <button id="submit">Submit</button>
+        <br><br>
+        <button id="start">Start</button>
+        <br><br>
+        <button id="reset">Reset</button>
+      </form>
+    </div>
     
-    <form>
-      <br>
-      <label for="name"></label>
-      <br>
-      <input type="text" id="name" name="name">
-      <br><br>
-      <label for="date"></label>
-      <br>
-      <input type="date" id="date" name="date">
-      <br><br>
-      <button onClick="countdown()">Submit</button>
-    </form>
-    
-	<script>
-	  function countdown () {
-	    const newName = document.getElementById("name").value;
-	    const newDate = document.getElementById("date").value;
-	    
-	    const birthday = new Date(newDate);
-
-      //initializing the values of days, hours, minutes, seconds in milliseconds
-      const second = 1000;
-      const minute = second * 60;
-      const hour = minute * 60;
-      const day = hour * 24;
-      
-      //calculating time left to the event
-      const today = new Date();
-      const timespan = birthday - today;
-      const days = Math.floor(timespan / day);
-      const hours = Math.floor((timespan % day) / hour);
-      const minutes = Math.floor((timespan % hour) / minute);
-      const seconds = Math.floor((timespan % minute) / second);
-      
-      //if it is the day of the event
-      if (timespan <= 0 && timespan > -day) {
-        document.write(
-          `
-            <div>
-    	        <h1>HAPPY ${newName.toUpperCase()}!!!</h1>
-	          </div>
-          `
-          );
-        return;
-      }
-      
-      //write to the document
-      document.write(
-	      `
-	      <div>
-	        <ul>
-	          <li>There are</li>
-	          <li>${days} days</li>
-	          <li>${hours} hours</li>
-	          <li>${minutes} minutes</li>
-	          <li>${seconds} seconds</li>
-	          <li>until your ${newName}</li>
-	        </ul>
-	      </div>
-	      `
-	      );
-	      
-	    //run countdown function every second   
-	    setTimeout(countdown, 1000);
-}
-	    
-	</script>
+	<script src="app.js"></script>
 	
   </body>
   
